@@ -4,32 +4,34 @@ using UnityEngine;
 
 public class MoveController : MonoBehaviour
 {
-    public bool CanMove, Parallax;
+    public bool Moving, Parallax;
 
-    [SerializeField] Vector3 PosicaoInicial, PosicaoFinal;
+    [SerializeField] Vector3 initialPosition, finalPosition;
 
     public float Speed;
     void Start()
     {
-        PosicaoInicial = transform.position;
+        initialPosition = transform.position;
     }
 
     
     void Update()
     {
-        if (CanMove)
+        if (Moving) Move();
+        if (transform.position == finalPosition) 
         {
-            Move();
-        }
-
-        if (transform.position == PosicaoFinal && Parallax)
-        {
-            transform.position = PosicaoInicial;
+            if (Parallax) transform.position = initialPosition;
+            else Moving = false;
         }
     }
 
     private void Move()
     {
-        transform.position = Vector3.MoveTowards(transform.position, PosicaoFinal, Speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, finalPosition, Speed * Time.deltaTime);
+    }
+
+    public void ChangeFinalPosition(Vector3 position)
+    {
+        finalPosition = position;
     }
 }

@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public LayerMask maskObj;
+    public float rayDistance;
+    Physics Physics;
+    MoveController moveController;
+    /*public LayerMask maskObj;
     public bool canMoveR, canMoveL;
 
     // Start is called before the first frame update
@@ -52,5 +55,26 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.Log("Colidiu com a Parede");
         }
+    }*/
+    void Start()
+    {
+        moveController = GetComponent<MoveController>();
+        Physics = new Physics()
+        {
+            RayDistance = rayDistance,
+            Transform = transform
+        };
+    }
+
+    private void Update()
+    {
+        /*Debug.DrawLine(transform.position, new Vector2(Right, transform.position.y), Color.red);
+        Debug.DrawLine(transform.position, new Vector2(left, transform.position.y), Color.blue);
+
+
+        colLeft = Physics2D.Raycast(transform.position, new Vector2(left, transform.position.y), 6);
+        colRight = Physics2D.Raycast(transform.position, new Vector2(Right, transform.position.y), 6);*/
+        if (Input.GetKeyDown(KeyCode.LeftArrow)) Physics.Move(false, moveController);
+        else if (Input.GetKeyDown(KeyCode.RightArrow)) Physics.Move(true, moveController);
     }
 }
