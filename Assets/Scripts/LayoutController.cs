@@ -29,26 +29,21 @@ public class LayoutController : MonoBehaviour
             Destroy(gameObject);
         }
     }*/
-    [SerializeField] Sprite[] BackgroundsList;
-    SpriteRenderer SpriteRenderer;
+    
     MoveController MoveController;
-
+    ChangeSpriteController ChangeSprite;
+ 
     private void Start()
     {
-        SpriteRenderer = GetComponent<SpriteRenderer>();
+        
         MoveController = GetComponent<MoveController>();
-
-        ChangeBackground();
+        ChangeSprite = GetComponent<ChangeSpriteController>();
     }
 
     private void Update()
     {
-        if (transform.position == MoveController.initialPosition && MoveController.Moving) ChangeBackground();
+        if (transform.position == MoveController.initialPosition && MoveController.Moving) ChangeSprite.ChangeBackground();
     }
 
-    void ChangeBackground()
-    {
-        int i = Random.Range(0, BackgroundsList.Length);
-        SpriteRenderer.sprite = BackgroundsList[i];
-    }
+    
 }
