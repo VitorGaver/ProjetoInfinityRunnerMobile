@@ -393,7 +393,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1568948744389811407, guid: b432ed90d6ec7ba4d95072288ca39a5f, type: 3}
       propertyPath: m_Name
-      value: Layout
+      value: Background
       objectReference: {fileID: 0}
     - target: {fileID: 3503804310380150986, guid: b432ed90d6ec7ba4d95072288ca39a5f, type: 3}
       propertyPath: m_IsActive
@@ -604,7 +604,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1568948744389811407, guid: b432ed90d6ec7ba4d95072288ca39a5f, type: 3}
       propertyPath: m_Name
-      value: Layout
+      value: Background
       objectReference: {fileID: 0}
     - target: {fileID: 3503804310380150986, guid: b432ed90d6ec7ba4d95072288ca39a5f, type: 3}
       propertyPath: m_IsActive

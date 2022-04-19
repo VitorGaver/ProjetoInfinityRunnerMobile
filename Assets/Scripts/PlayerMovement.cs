@@ -74,7 +74,10 @@ public class PlayerMovement : MonoBehaviour
 
         /*colLeft = Physics2D.Raycast(transform.position, new Vector2(left, transform.position.y), 6);
         colRight = Physics2D.Raycast(transform.position, new Vector2(Right, transform.position.y), 6);*/
-        if (Input.GetKeyDown(KeyCode.LeftArrow) && transform.position.x > -0.32f) Physics.Move(false, moveController);
-        else if (Input.GetKeyDown(KeyCode.RightArrow) && transform.position.x < 0.32f) Physics.Move(true, moveController);
+        if (Input.GetKeyDown(KeyCode.LeftArrow) && transform.position.x >= -0.16f && !moveController.Moving) 
+            Physics.Move(false, moveController);
+        else if (Input.GetKeyDown(KeyCode.RightArrow) && transform.position.x <= 0.16f && !moveController.Moving) 
+            Physics.Move(true, moveController);
     }
+
 }
