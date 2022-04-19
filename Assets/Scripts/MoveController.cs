@@ -6,16 +6,15 @@ public class MoveController : MonoBehaviour
 {
     public bool Moving, Parallax;
 
-    [SerializeField] Vector3 initialPosition, finalPosition;
+    public Vector3 initialPosition, finalPosition;
 
     public float Speed;
     void Start()
     {
-        initialPosition = transform.position;
+        if(initialPosition == Vector3.zero)initialPosition = transform.position;
     }
 
-    
-    void Update()
+    void FixedUpdate()
     {
         if (Moving) Move();
         if (transform.position == finalPosition) 

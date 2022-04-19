@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SceneMove : MonoBehaviour
+public class LayoutController : MonoBehaviour
 {
-    public float moveSceneSpeed;
+    /*public float moveSceneSpeed;
 
     private GameObject gameManagerObj;
     private GameManager gameManager;
@@ -28,5 +28,27 @@ public class SceneMove : MonoBehaviour
             gameManager.SpawnScene(new Vector3(0, transform.position.y + 20));
             Destroy(gameObject);
         }
+    }*/
+    [SerializeField] Sprite[] BackgroundsList;
+    SpriteRenderer SpriteRenderer;
+    MoveController MoveController;
+
+    private void Start()
+    {
+        SpriteRenderer = GetComponent<SpriteRenderer>();
+        MoveController = GetComponent<MoveController>();
+
+        ChangeBackground();
+    }
+
+    private void Update()
+    {
+        if (transform.position == MoveController.initialPosition && MoveController.Moving) ChangeBackground();
+    }
+
+    void ChangeBackground()
+    {
+        int i = Random.Range(0, BackgroundsList.Length);
+        SpriteRenderer.sprite = BackgroundsList[i];
     }
 }

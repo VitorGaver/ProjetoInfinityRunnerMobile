@@ -6,7 +6,6 @@ public class SpawnerController : MonoBehaviour
 {
     [SerializeField] GameObject[] ItemList;
 
-
     void Start()
     {
         int i = Random.Range(0, ItemList.Length);
