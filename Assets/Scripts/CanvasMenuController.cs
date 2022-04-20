@@ -10,12 +10,12 @@ public class CanvasMenuController : MonoBehaviour
     public GameObject canvasMenu;
     public GameObject canvasUi;
     public GameObject startBut;
-    public Text counter;
 
-    [Header ("StartGame")]
+    [Header("StartGame")]
     public GameObject Player;
     PlayerMovement playerScript;
     public GameObject spawner1, spawner2;
+
 
     public void Start()
     {
@@ -26,26 +26,15 @@ public class CanvasMenuController : MonoBehaviour
     public void StartGame()
     {
         Time.timeScale = 1;
+
+        startBut.SetActive(false);
+
         StartCoroutine(EnableCanvasUi());
     }
 
     IEnumerator EnableCanvasUi()
     {
-        startBut.SetActive(false);
-        counter.gameObject.SetActive(true);
-        counter.text = "3";
-
-        yield return new WaitForSeconds(1);
-
-        counter.text = "2";
-
-        yield return new WaitForSeconds(1);
-
-        counter.text = "1";
-
-        yield return new WaitForSeconds(1);
-
-        counter.gameObject.SetActive(false);
+        yield return new WaitForSeconds(3);
 
         canvasMenu.SetActive(false);
 
