@@ -7,9 +7,6 @@ public class PlayerMovement : MonoBehaviour
     public float rayDistance;
     Physics Physics;
     MoveController moveController;
-
-    public bool canMove;
-
     /*public LayerMask maskObj;
     public bool canMoveR, canMoveL;
 
@@ -77,9 +74,9 @@ public class PlayerMovement : MonoBehaviour
 
         /*colLeft = Physics2D.Raycast(transform.position, new Vector2(left, transform.position.y), 6);
         colRight = Physics2D.Raycast(transform.position, new Vector2(Right, transform.position.y), 6);*/
-        if (Input.GetKeyDown(KeyCode.LeftArrow) && transform.position.x >= -0.16f && !moveController.Moving && canMove) 
+        if (Input.GetKeyDown(KeyCode.LeftArrow) && transform.position.x >= -0.16f && !moveController.Moving) 
             Physics.Move(false, moveController);
-        else if (Input.GetKeyDown(KeyCode.RightArrow) && transform.position.x <= 0.16f && !moveController.Moving && canMove) 
+        else if (Input.GetKeyDown(KeyCode.RightArrow) && transform.position.x <= 0.16f && !moveController.Moving) 
             Physics.Move(true, moveController);
     }
 
