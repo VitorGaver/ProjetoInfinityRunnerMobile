@@ -467,7 +467,7 @@ MonoBehaviour:
   KeepY: 0
   initialPosition: {x: 0, y: 0, z: 0}
   finalPosition: {x: 0, y: 0, z: 0}
-  Speed: 2
+  Speed: 3
 --- !u!1001 &1765364059
 PrefabInstance:
   m_ObjectHideFlags: 0

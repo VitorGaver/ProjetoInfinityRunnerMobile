@@ -7,6 +7,9 @@ public class PlayerMovement : MonoBehaviour
     public float rayDistance;
     Physics Physics;
     MoveController moveController;
+
+    Vector3 touchPos;
+    Touch ActualTouch;
     /*public LayerMask maskObj;
     public bool canMoveR, canMoveL;
 
@@ -71,13 +74,28 @@ public class PlayerMovement : MonoBehaviour
         Debug.DrawLine(transform.position, new Vector2(transform.position.x + rayDistance, transform.position.y), Color.red);
         Debug.DrawLine(transform.position, new Vector2(transform.position.x - rayDistance, transform.position.y), Color.blue);
 
-
-        /*colLeft = Physics2D.Raycast(transform.position, new Vector2(left, transform.position.y), 6);
-        colRight = Physics2D.Raycast(transform.position, new Vector2(Right, transform.position.y), 6);*/
-        if (Input.GetKeyDown(KeyCode.LeftArrow) && transform.position.x >= -0.16f && !moveController.Moving) 
+        #region "PC inputs"
+        if (Input.GetKeyDown(KeyCode.LeftArrow) && transform.position.x >= -0.16f && !moveController.Moving)
             Physics.Move(false, moveController);
-        else if (Input.GetKeyDown(KeyCode.RightArrow) && transform.position.x <= 0.16f && !moveController.Moving) 
+        else if (Input.GetKeyDown(KeyCode.RightArrow) && transform.position.x <= 0.16f && !moveController.Moving)
             Physics.Move(true, moveController);
+        #endregion
+
+        #region "Android inputs"
+        if (Input.touchCount > 0)
+        {
+            ActualTouch = Input.GetTouch(0);
+            if (ActualTouch.phase == TouchPhase.Began) touchPos = ActualTouch.position;
+            else if (ActualTouch.phase == TouchPhase.Ended)
+            {
+                if (ActualTouch.position.x < touchPos.x && transform.position.x >= -0.16f && !moveController.Moving)
+                    Physics.Move(false, moveController);
+                else if (ActualTouch.position.x > touchPos.x && transform.position.x <= 0.16f && !moveController.Moving)
+                    Physics.Move(true, moveController);
+                Debug.Log(ActualTouch.position.x < ActualTouch.position.x );
+            }
+        }
+        #endregion
     }
 
 }
