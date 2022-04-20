@@ -21,8 +21,7 @@ public class Physics
 
     bool CheckHorizontalCollision(bool right)
     {
-        Debug.Log(RayDistance);
-        if (right) return Physics2D.Raycast(Transform.position, new Vector2(Transform.position.x + RayDistance, Transform.position.y));
-        else return Physics2D.Raycast(Transform.position, new Vector2(Transform.position.x - RayDistance, Transform.position.y));
+        if (right) return Physics2D.Linecast(Transform.position, new Vector2(Transform.position.x + RayDistance, Transform.position.y));
+        else return Physics2D.Linecast(Transform.position, new Vector2(Transform.position.x - RayDistance, Transform.position.y));
     }
 }
