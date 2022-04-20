@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MoveController : MonoBehaviour
 {
-    public bool Moving, Parallax;
+    public bool Moving, Parallax, KeepX, KeepY;
 
     public Vector3 initialPosition, finalPosition;
 
@@ -12,6 +12,7 @@ public class MoveController : MonoBehaviour
     void Start()
     {
         if(initialPosition == Vector3.zero)initialPosition = transform.position;
+        finalPosition = KeepCoordinades(finalPosition);
     }
 
     void FixedUpdate()
@@ -31,6 +32,14 @@ public class MoveController : MonoBehaviour
 
     public void ChangeFinalPosition(Vector3 position)
     {
-        finalPosition = position;
+        finalPosition = KeepCoordinades(position);
+    }
+
+    Vector3 KeepCoordinades(Vector3 position)
+    {
+        if (KeepX) position.x = initialPosition.x;
+        if (KeepY) position.y = initialPosition.y;
+
+        return position;
     }
 }
