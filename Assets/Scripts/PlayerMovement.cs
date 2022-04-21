@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float rayDistance;
+    public float rayDistanceY;
     Physics Physics;
     MoveController moveController;
 

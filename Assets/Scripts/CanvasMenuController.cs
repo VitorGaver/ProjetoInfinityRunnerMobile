@@ -10,7 +10,7 @@ public class CanvasMenuController : MonoBehaviour
     public GameObject canvasMenu;
     public GameObject canvasUi;
     public GameObject startBut;
-    public Text counter;
+    public TextMeshProUGUI counter;
 
     [Header("StartGame")]
     public GameObject Player;

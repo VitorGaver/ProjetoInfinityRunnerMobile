@@ -17,6 +17,9 @@ public class CanvasController : MonoBehaviour
     [Header("Config")]
     public GameObject ConfigPanel;
 
+    [Header("Canvas Final")]
+    public GameObject canvasFinal;
+
     public void Start()
     {
         Config();
