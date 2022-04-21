@@ -10,6 +10,9 @@ public class PlayerMovement : MonoBehaviour
 
     Vector3 touchPos;
     Touch ActualTouch;
+
+    public bool canMove;
+
     /*public LayerMask maskObj;
     public bool canMoveR, canMoveL;
 
@@ -75,9 +78,9 @@ public class PlayerMovement : MonoBehaviour
         Debug.DrawLine(transform.position, new Vector2(transform.position.x - rayDistance, transform.position.y), Color.blue);
 
         #region "PC inputs"
-        if (Input.GetKeyDown(KeyCode.LeftArrow) && transform.position.x >= -0.16f && !moveController.Moving)
+        if (Input.GetKeyDown(KeyCode.LeftArrow) && transform.position.x >= -0.16f && !moveController.Moving && canMove)
             Physics.Move(false, moveController);
-        else if (Input.GetKeyDown(KeyCode.RightArrow) && transform.position.x <= 0.16f && !moveController.Moving)
+        else if (Input.GetKeyDown(KeyCode.RightArrow) && transform.position.x <= 0.16f && !moveController.Moving && canMove)
             Physics.Move(true, moveController);
         #endregion
 
@@ -88,9 +91,9 @@ public class PlayerMovement : MonoBehaviour
             if (ActualTouch.phase == TouchPhase.Began) touchPos = ActualTouch.position;
             else if (ActualTouch.phase == TouchPhase.Ended)
             {
-                if (ActualTouch.position.x < touchPos.x && transform.position.x >= -0.16f && !moveController.Moving)
+                if (ActualTouch.position.x < touchPos.x && transform.position.x >= -0.16f && !moveController.Moving && canMove)
                     Physics.Move(false, moveController);
-                else if (ActualTouch.position.x > touchPos.x && transform.position.x <= 0.16f && !moveController.Moving)
+                else if (ActualTouch.position.x > touchPos.x && transform.position.x <= 0.16f && !moveController.Moving && canMove)
                     Physics.Move(true, moveController);
                 Debug.Log(ActualTouch.position.x < ActualTouch.position.x );
             }
