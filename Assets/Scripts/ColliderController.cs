@@ -6,7 +6,7 @@ public class ColliderController : MonoBehaviour
 {
     [Header("Properties")]
     public float rayDistanceY;
-    bool canDie = true;
+    public bool canDie = true;
 
     [Header("Scripts")]
     PlayerLife playerLife;
@@ -22,20 +22,18 @@ public class ColliderController : MonoBehaviour
     {
         Debug.DrawLine(transform.position, new Vector2(transform.position.x, transform.position.y + rayDistanceY), Color.green);
 
-        if (Physics2D.Linecast(transform.position, new Vector2(transform.position.x, transform.position.y + rayDistanceY)).collider.tag == "Objeto" && canDie)
-        {
-            StartCoroutine(died());
-            playerLife.lifes--;
-            playerLife.checkLifes();
-        }
+        if (Physics2D.Linecast(transform.position, new Vector2(transform.position.x, transform.position.y + rayDistanceY)).collider.CompareTag("Objeto") && canDie)
+            StartCoroutine(Died());
     }
 
-    IEnumerator died()
+    IEnumerator Died()
     {
+        playerLife.lifes--;
+        playerLife.checkLifes();
         canDie = false;
 
         yield return new WaitForSeconds(1.5f);
-
+       
         canDie = true;
     }
 }
