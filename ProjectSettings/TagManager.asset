@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Parede
   - Objeto
+  - Vidro
+  - Plastico
+  - Papel
+  - Metal
   layers:
   - Default
   - TransparentFX

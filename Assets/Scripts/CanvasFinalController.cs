@@ -21,9 +21,9 @@ public class CanvasFinalController : MonoBehaviour
 
         pointsController = player.GetComponent<PointsController>();
 
-        papelText.text = pointsController.papel.ToString();
-        metalText.text = pointsController.metal.ToString();
-        plasticoText.text = pointsController.plastico.ToString();
-        vidroText.text = pointsController.vidro.ToString();
+        vidroText.text = pointsController.pointsQuantity[0].ToString();
+        papelText.text = pointsController.pointsQuantity[1].ToString();
+        plasticoText.text = pointsController.pointsQuantity[2].ToString();
+        metalText.text = pointsController.pointsQuantity[3].ToString();       
     }
 }
