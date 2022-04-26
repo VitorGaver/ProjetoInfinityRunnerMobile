@@ -10,6 +10,8 @@ TagManager:
   - Plastico
   - Papel
   - Metal
+  - Saco
+  - Life
   layers:
   - Default
   - TransparentFX
@@ -18,7 +20,7 @@ TagManager:
   - Water
   - UI
   - Ground
-  - 
+  - Objetos
   - 
   - 
   - 

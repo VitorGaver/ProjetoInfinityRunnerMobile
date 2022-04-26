@@ -23,13 +23,35 @@ public class ColliderController : MonoBehaviour
             StartCoroutine(Died());
 
         if (trigger.gameObject.CompareTag("Vidro"))
+        {
             pointsController.AddQuantity(0);
+            Destroy(trigger.gameObject);
+        }
+            
         if (trigger.gameObject.CompareTag("Papel"))
+        {
             pointsController.AddQuantity(1);
+            Destroy(trigger.gameObject);
+        }
+            
         if (trigger.gameObject.CompareTag("Plastico"))
+        {
             pointsController.AddQuantity(2);
+            Destroy(trigger.gameObject);
+        }
+            
         if (trigger.gameObject.CompareTag("Metal"))
+        {
             pointsController.AddQuantity(3);
+            Destroy(trigger.gameObject);
+        }
+
+        if (trigger.gameObject.CompareTag("Saco"))
+        {
+            pointsController.AddTrashBag();
+            Destroy(trigger.gameObject);
+        }
+            
     }
 
     IEnumerator Died()

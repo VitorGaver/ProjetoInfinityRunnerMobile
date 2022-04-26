@@ -3339,8 +3339,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rayDistance: 0.32
+  rayCastDistance: 0.16
   startRayDistance: 0.16
   canMove: 0
+  layerObj:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!212 &1543941916
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3478,6 +3482,7 @@ MonoBehaviour:
   - {fileID: 4729769074932775466, guid: 8606a0dafb51e7b4aade2f717fd8bb9e, type: 3}
   - {fileID: -5727530961257212847, guid: 8606a0dafb51e7b4aade2f717fd8bb9e, type: 3}
   pointsQuantity: 00000000000000000000000000000000
+  lastPoint: 0
 --- !u!114 &1543941922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3665,7 +3670,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 000
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

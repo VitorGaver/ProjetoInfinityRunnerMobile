@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float rayDistance;
+    public float rayCastDistance;
     public float startRayDistance;
     Physics Physics;
     MoveController moveController;
@@ -13,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     Touch ActualTouch;
 
     public bool canMove;
+
+    public LayerMask layerObj;
 
     /*public LayerMask maskObj;
     public bool canMoveR, canMoveL;
@@ -69,14 +72,17 @@ public class PlayerMovement : MonoBehaviour
         Physics = new Physics()
         {
             RayDistance = rayDistance,
-            Transform = transform
+            Transform = transform,
+            StartRayDistance = startRayDistance,
+            RayCastDistance = rayCastDistance,
+            LayerObj = layerObj
         };
     }
 
     private void Update()
     {
-        Debug.DrawLine(new Vector2(transform.position.x + startRayDistance, transform.position.y), new Vector2(transform.position.x + rayDistance, transform.position.y), Color.red);
-        Debug.DrawLine(new Vector2(transform.position.x - startRayDistance, transform.position.y), new Vector2(transform.position.x - rayDistance, transform.position.y), Color.blue);
+        Debug.DrawRay(new Vector2(transform.position.x + startRayDistance, transform.position.y), transform.right * rayCastDistance, Color.red);
+        Debug.DrawRay(new Vector2(transform.position.x - startRayDistance, transform.position.y), transform.right * -rayCastDistance, Color.blue);
 
         #region "PC inputs"
         if (Input.GetKeyDown(KeyCode.LeftArrow) && transform.position.x >= -0.16f && !moveController.Moving && canMove)
