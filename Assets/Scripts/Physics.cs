@@ -5,6 +5,7 @@ using UnityEngine;
 public class Physics
 {
     public float RayDistance;
+    public float StartRayDistance = 0.16f;
     public Transform Transform;
 
     public void Move(bool right, MoveController MoveController)
@@ -21,7 +22,7 @@ public class Physics
 
     bool CheckHorizontalCollision(bool right)
     {
-        if (right) return Physics2D.Linecast(Transform.position, new Vector2(Transform.position.x + RayDistance, Transform.position.y));
-        else return Physics2D.Linecast(Transform.position, new Vector2(Transform.position.x - RayDistance, Transform.position.y));
+        if (right) return Physics2D.Linecast(new Vector2(Transform.position.x + StartRayDistance, Transform.position.y), new Vector2(Transform.position.x + RayDistance, Transform.position.y));
+        else return Physics2D.Linecast(new Vector2(Transform.position.x - StartRayDistance, Transform.position.y), new Vector2(Transform.position.x - RayDistance, Transform.position.y));
     }
 }

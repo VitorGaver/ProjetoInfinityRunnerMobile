@@ -3282,7 +3282,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1300254873838534841, guid: 44c854fab10c7274e88b48eb3fe3bd48, type: 3}
+  m_Sprite: {fileID: -8952368846971532674, guid: 8606a0dafb51e7b4aade2f717fd8bb9e, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -3317,6 +3317,8 @@ GameObject:
   - component: {fileID: 1543941921}
   - component: {fileID: 1543941922}
   - component: {fileID: 1543941923}
+  - component: {fileID: 1543941924}
+  - component: {fileID: 1543941925}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -3337,7 +3339,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rayDistance: 0.32
-  rayDistanceY: 0.1
+  startRayDistance: 0.16
   canMove: 0
 --- !u!212 &1543941916
 SpriteRenderer:
@@ -3454,7 +3456,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d03d5cf7446b169439537dc7f70c9892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rayDistanceY: 0.1
   canDie: 1
 --- !u!114 &1543941921
 MonoBehaviour:
@@ -3504,6 +3505,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9e3c9748530e3b408d3779772ce118c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &1543941924
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1543941914}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.08507337}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.14, y: 0.2}
+    newSize: {x: 0.14, y: 0.2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.14, y: 0.029853255}
+  m_EdgeRadius: 0
+--- !u!50 &1543941925
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1543941914}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1619088377
 GameObject:
   m_ObjectHideFlags: 0

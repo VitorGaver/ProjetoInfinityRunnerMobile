@@ -5,9 +5,7 @@ using UnityEngine;
 public class ColliderController : MonoBehaviour
 {
     [Header("Properties")]
-    public float rayDistanceY;
     public bool canDie = true;
-    GameObject colliderGameObj;
 
     [Header("Scripts")]
     PlayerLife playerLife;
@@ -19,37 +17,19 @@ public class ColliderController : MonoBehaviour
         playerLife = GetComponent<PlayerLife>();
     }
 
-    private void Update()
+    private void OnTriggerEnter2D(Collider2D trigger)
     {
-        Debug.DrawLine(transform.position, new Vector2(transform.position.x, transform.position.y + rayDistanceY), Color.green);
+        if (trigger.gameObject.CompareTag("Objeto") && (canDie))
+            StartCoroutine(Died());
 
-        //if (Physics2D.Linecast(transform.position, new Vector2(transform.position.x, transform.position.y + rayDistanceY)).collider.CompareTag("Objeto") && canDie)
-          //StartCoroutine(Died());
-
-        if (Physics2D.Linecast(transform.position, new Vector2(transform.position.x, transform.position.y + rayDistanceY)))
-            colliderGameObj = Physics2D.Linecast(transform.position, new Vector2(transform.position.x, transform.position.y + rayDistanceY)).collider.gameObject;
-
-        switch (colliderGameObj.tag)
-        {
-            case "Objeto":
-                if (canDie)
-                    StartCoroutine(Died());
-                break;
-            case "Vidro":
-                pointsController.AddQuantity(0);
-                break;
-            case "Papel":
-                pointsController.AddQuantity(1);
-                break;
-            case "Plastico":
-                pointsController.AddQuantity(2);
-                break;
-            case "Metal":
-                pointsController.AddQuantity(3);
-                break;
-        }
-
-        colliderGameObj = null;
+        if (trigger.gameObject.CompareTag("Vidro"))
+            pointsController.AddQuantity(0);
+        if (trigger.gameObject.CompareTag("Papel"))
+            pointsController.AddQuantity(1);
+        if (trigger.gameObject.CompareTag("Plastico"))
+            pointsController.AddQuantity(2);
+        if (trigger.gameObject.CompareTag("Metal"))
+            pointsController.AddQuantity(3);
     }
 
     IEnumerator Died()
@@ -61,5 +41,5 @@ public class ColliderController : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
        
         canDie = true;
-    }
+    }   
 }

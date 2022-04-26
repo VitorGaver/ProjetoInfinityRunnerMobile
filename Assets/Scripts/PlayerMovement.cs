@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float rayDistance;
-    public float rayDistanceY;
+    public float startRayDistance;
     Physics Physics;
     MoveController moveController;
 
@@ -75,8 +75,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        Debug.DrawLine(transform.position, new Vector2(transform.position.x + rayDistance, transform.position.y), Color.red);
-        Debug.DrawLine(transform.position, new Vector2(transform.position.x - rayDistance, transform.position.y), Color.blue);
+        Debug.DrawLine(new Vector2(transform.position.x + startRayDistance, transform.position.y), new Vector2(transform.position.x + rayDistance, transform.position.y), Color.red);
+        Debug.DrawLine(new Vector2(transform.position.x - startRayDistance, transform.position.y), new Vector2(transform.position.x - rayDistance, transform.position.y), Color.blue);
 
         #region "PC inputs"
         if (Input.GetKeyDown(KeyCode.LeftArrow) && transform.position.x >= -0.16f && !moveController.Moving && canMove)
