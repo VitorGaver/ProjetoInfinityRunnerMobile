@@ -1,15 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 
 public class CanvasFinalController : MonoBehaviour
 {
     [Header("Points")]
-    public TextMeshProUGUI papelText;
-    public TextMeshProUGUI metalText;
-    public TextMeshProUGUI plasticoText;
-    public TextMeshProUGUI vidroText;
+    public Text papelText;
+    public Text metalText;
+    public Text plasticoText;
+    public Text vidroText;
 
     [Header("Player")]
     public GameObject player;

@@ -51,13 +51,19 @@ public class ColliderController : MonoBehaviour
             pointsController.AddTrashBag();
             Destroy(trigger.gameObject);
         }
+
+        if (trigger.gameObject.CompareTag("Life"))
+        {
+            playerLife.AddLifes();
+            Destroy(trigger.gameObject);
+        }
             
     }
 
     IEnumerator Died()
     {
         playerLife.lifes--;
-        playerLife.checkLifes();
+        playerLife.CheckLifes();
         canDie = false;
 
         yield return new WaitForSeconds(1.5f);

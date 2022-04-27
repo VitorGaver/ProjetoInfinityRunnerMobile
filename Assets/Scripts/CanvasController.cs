@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
+
 
 public class CanvasController : MonoBehaviour
 {
     [Header("Pontuação")]
     public Image PointsL;
     public Image PointsR;
-    public TextMeshProUGUI PointsText;
+    public Text PointsText;
 
     [Header("Vidas")]
-    public TextMeshProUGUI LifeText;
+    public Text LifeText;
 
     [Header("Config")]
     public GameObject ConfigPanel;

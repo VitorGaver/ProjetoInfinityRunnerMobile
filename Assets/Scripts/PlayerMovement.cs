@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
 
     public bool canMove;
 
-    public LayerMask layerObj;
+    public int layerObj = 1 << 7;
 
     /*public LayerMask maskObj;
     public bool canMoveR, canMoveL;
@@ -74,7 +74,6 @@ public class PlayerMovement : MonoBehaviour
             RayDistance = rayDistance,
             Transform = transform,
             StartRayDistance = startRayDistance,
-            RayCastDistance = rayCastDistance,
             LayerObj = layerObj
         };
     }

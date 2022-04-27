@@ -21,9 +21,18 @@ public class PlayerLife : MonoBehaviour
         canvasController = canvasUi.GetComponent<CanvasController>();
     }
 
-    public void checkLifes()
+    public void CheckLifes()
     {
         canvasController.LifeText.text = lifes.ToString();
         if (lifes == 0) restartPhase.GameOver();
+    }
+    
+    public void AddLifes()
+    {
+        if (lifes < 3)
+        {
+            lifes++;
+            CheckLifes();
+        }
     }
 }
