@@ -12,7 +12,7 @@ public class RestartPhase : MonoBehaviour
 
     public void RestartGame()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(0);        
     }
 
     public void GameOver()

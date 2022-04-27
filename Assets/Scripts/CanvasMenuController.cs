@@ -19,13 +19,12 @@ public class CanvasMenuController : MonoBehaviour
 
     public void Start()
     {
+        Time.timeScale = 1;
         playerScript = Player.GetComponent<PlayerMovement>();
-
-        Time.timeScale = 0;
     }
+
     public void StartGame()
     {
-        Time.timeScale = 1;
         StartCoroutine(EnableCanvasUi());
     }
 
