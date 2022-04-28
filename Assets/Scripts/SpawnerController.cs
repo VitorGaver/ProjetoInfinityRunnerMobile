@@ -5,10 +5,16 @@ using UnityEngine;
 public class SpawnerController : MonoBehaviour
 {
     [SerializeField] GameObject[] ItemList;
+    public bool spawner1;
+    public bool spawner2;
+
+    public GameObject spawner2Obj;
+    [HideInInspector] public SpawnerController spawnerController;
 
     void Start()
     {
         Spawn();
+        if (spawner1) spawnerController = spawner2Obj.GetComponent<SpawnerController>();
     }
 
     public void Spawn()
