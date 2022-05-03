@@ -16,11 +16,13 @@ public class CanvasMenuController : MonoBehaviour
     public GameObject Player;
     PlayerMovement playerScript;
     public GameObject spawner1, spawner2;
+    [SerializeField] FadeController fade;
 
     public void Start()
     {
         Time.timeScale = 1;
         playerScript = Player.GetComponent<PlayerMovement>();
+        StartCoroutine(fade.SetFadeOut());
     }
 
     public void StartGame()

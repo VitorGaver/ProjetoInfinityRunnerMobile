@@ -11,6 +11,8 @@ public class ColliderController : MonoBehaviour
     PlayerLife playerLife;
     PointsController pointsController;
 
+    [SerializeField] CameraController cameraController;
+
     private void Start()
     {
         pointsController = GetComponent<PointsController>();
@@ -52,9 +54,10 @@ public class ColliderController : MonoBehaviour
             Destroy(trigger.gameObject);
         }
 
-        if (trigger.gameObject.CompareTag("Life"))
+        if (trigger.gameObject.CompareTag("Life") )
         {
-            playerLife.AddLifes();
+            if (playerLife.lifes < 3) playerLife.AddLifes();
+            else pointsController.AddTrashBag();
             Destroy(trigger.gameObject);
         }
             
@@ -65,9 +68,9 @@ public class ColliderController : MonoBehaviour
         playerLife.lifes--;
         playerLife.CheckLifes();
         canDie = false;
-
+        if (playerLife.lifes > 0) cameraController.Shake();
         yield return new WaitForSeconds(1.5f);
        
-        canDie = true;
+        if(playerLife.lifes > 0) canDie = true;
     }   
 }

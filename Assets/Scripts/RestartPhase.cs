@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class RestartPhase : MonoBehaviour
 {
+    bool canRestart = true;
     [Header("Canvas")]
     public GameObject canvasFinal;
     public GameObject canvasUI;
@@ -14,6 +15,13 @@ public class RestartPhase : MonoBehaviour
     {
         SceneManager.LoadScene(0);        
     }
+
+    /*IEnumerator Restart()
+    {
+        canRestart = false;
+        yield return StartCoroutine(fade.SetFadeIn());
+        SceneManager.LoadScene(0);
+    }*/
 
     public void GameOver()
     {

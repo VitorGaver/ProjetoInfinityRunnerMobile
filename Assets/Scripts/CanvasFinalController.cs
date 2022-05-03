@@ -15,6 +15,7 @@ public class CanvasFinalController : MonoBehaviour
     public GameObject player;
     PointsController pointsController;
 
+
     private void Start()
     {
         Time.timeScale = 0;

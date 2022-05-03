@@ -91,7 +91,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3130189536320841230, guid: f4de8b1f7721d134d81f08cc2eadfd7c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.439
+      value: -0.44
       objectReference: {fileID: 0}
     - target: {fileID: 3130189536320841230, guid: f4de8b1f7721d134d81f08cc2eadfd7c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -149,7 +149,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2019072288403271016, guid: f8bd3c684504e46409c8f57c932c266b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.706
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 2019072288403271016, guid: f8bd3c684504e46409c8f57c932c266b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -211,7 +211,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2019072288403271016, guid: f8bd3c684504e46409c8f57c932c266b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.873
+      value: -1.13
       objectReference: {fileID: 0}
     - target: {fileID: 2019072288403271016, guid: f8bd3c684504e46409c8f57c932c266b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -277,7 +277,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3130189536320841230, guid: f4de8b1f7721d134d81f08cc2eadfd7c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.016
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3130189536320841230, guid: f4de8b1f7721d134d81f08cc2eadfd7c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -335,7 +335,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2019072288403271016, guid: f8bd3c684504e46409c8f57c932c266b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.367
+      value: -0.36
       objectReference: {fileID: 0}
     - target: {fileID: 2019072288403271016, guid: f8bd3c684504e46409c8f57c932c266b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -390,6 +390,10 @@ PrefabInstance:
     - target: {fileID: 1323270979246462223, guid: f4de8b1f7721d134d81f08cc2eadfd7c, type: 3}
       propertyPath: m_Name
       value: ObsSpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 1323270979246462223, guid: f4de8b1f7721d134d81f08cc2eadfd7c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3130189536320841230, guid: f4de8b1f7721d134d81f08cc2eadfd7c, type: 3}
       propertyPath: m_RootOrder
